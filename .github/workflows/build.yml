@@ -100,7 +100,7 @@ jobs:
 
     strategy:
       matrix:
-        CPU: [rk3328, rk3528, rk3399, rk3566, rk3568, rk3576, rk3588]
+        CPU: [rk3399]
     steps:
     - name: Checkout
       uses: actions/checkout@main
@@ -141,33 +141,9 @@ jobs:
         mkdir project
         cd project
         case ${{ matrix.CPU }} in
-        rk3328)
-          BRANCH=kernel-6.6.y
-          KERNEL_VARIANT=mainline
-          ;;
-        rk3528)
-          BRANCH=kernel-6.1.y
-          KERNEL_VARIANT=vendor
-          ;;
         rk3399)
           BRANCH=kernel-6.6.y
           KERNEL_VARIANT=mainline
-          ;;
-        rk3568)
-          BRANCH=kernel-6.1.y
-          KERNEL_VARIANT=vendor
-          ;;
-        rk3566)
-          BRANCH=kernel-6.1.y
-          KERNEL_VARIANT=vendor
-          ;;
-        rk3576)
-          BRANCH=kernel-6.1.y
-          KERNEL_VARIANT=vendor
-          ;;
-        rk3588)
-          BRANCH=kernel-6.1.y
-          KERNEL_VARIANT=vendor
           ;;
         *)
           echo "unknow cpu"
