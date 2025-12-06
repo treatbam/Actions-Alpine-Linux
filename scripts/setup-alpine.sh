@@ -62,7 +62,7 @@ iface eth0 inet dhcp
 "
 
 # Set timezone to UTC
-TIMEZONEOPTS="-z UTC"
+TIMEZONEOPTS="-z America/Chicago"
 
 # Add a random mirror
 APKREPOSOPTS="-r"
